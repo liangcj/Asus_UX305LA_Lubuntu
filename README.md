@@ -20,3 +20,25 @@ Things that require additional configuration or workarounds:
 - Trackpad toggle (fn-F8)
 - Sound adjustment and mute (fn-F10, fn-F11, fn-F12)
 - Getting the sound to work
+
+## Trackpad tweaks
+Add the following lines to `~/.config/lxsession/Lubuntu/autostart` (it as an empty file before editing)
+```
+synclient TapButton3=2
+synclient ClickFinger3=2
+synclient FingerHigh=17
+synclient FingerLow=10
+synclient MaxTapMove=20
+synclient HorizHysteresis=10
+synclient VertHysteresis=10
+synclient VertEdgeScroll=0
+synclient AreaLeftEdge=100
+synclient AreaRightEdge=2800
+synclient AreaTopEdge=250
+synclient VertScrollDelta=30
+synclient CoastingSpeed=0
+synclient PalmDetect=1
+synclient PalmMinWidth=3
+synclient PalmMinZ=100
+```
+Adds three finger tap/click, removes edge scrolling, disables coasting (continued two-finger scrolling even after lifting fingers), makes touchpad less sensitive to unwanted clicks/movement while typing. Since the options are in the `autostart` file, they will automatically be applied at startup.
