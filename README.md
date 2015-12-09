@@ -18,6 +18,7 @@ Things that require additional configuration or workarounds:
 - Airplane mode (fn-F2)
 - Brightness adjustment (fn-F5, fn-F6). Though ctrl-F10 and ctrl-F11 will dim and brighten.
 - Trackpad toggle (fn-F8)
+- Sound
 - Sound adjustment and mute (fn-F10, fn-F11, fn-F12)
 - Getting the sound to work
 
@@ -42,3 +43,33 @@ synclient PalmMinWidth=3
 synclient PalmMinZ=100
 ```
 Adds three finger tap/click, removes edge scrolling, disables coasting (continued two-finger scrolling even after lifting fingers), makes touchpad less sensitive to unwanted clicks/movement while typing. Since the options are in the `autostart` file, they will automatically be applied at startup.
+
+## Sound tweaks
+To get sound working, install pulseaudio (`sudo apt-get install pulseaudio`) and play with the settings until sound works. Installing pulseaudio should also allow one to add the sound indicator to the taskbar.
+
+To get the shortcuts working, open up `~/.config/openbox/lubuntu-rc.xml` and search for the following:
+
+- `XF86AudioRaseVolume`
+- `XF86AudioLowerVolume`
+- `XF86AudioMute`
+
+Then edit the text between `<command>` and `</command>` for each of the three respective sections to
+
+- `amixer -D pulse -q sset Master 3%+ unmute`
+- `amixer -D pulse -q sset Master 3%- unmute`
+- `amixer -D pulse -q sset Master toggle`
+
+## Shortcuts for resizing windows
+For aerosnap-like functionality, open up `~/.config/openbox/lubuntu-rc.xml` and search for the following:
+
+- `"W-Left"`
+- `"W-Right"`
+- `"W-Up"`
+
+Then make the following changes for each of the three searches:
+
+- Make sure "height" is set to `100%` and "width" is set to `50%`
+- Make sure "height" is set to `100%` and "width" is set to `50%`
+- Change `action name` to `"Maximize"` (include the quotes)
+
+For some reason the "snap left" and "snap right" functionality doesn't work perfectly for the terminal programs I've tried so far (XTerm and LXTerminal). The windows snap correctly, and take up 50% of the horizontal space; however, they don't extend all the way down and leave a small gap from the bottom.
