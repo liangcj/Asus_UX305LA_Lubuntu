@@ -33,7 +33,7 @@ synclient MaxTapMove=20
 synclient HorizHysteresis=10
 synclient VertHysteresis=10
 synclient VertEdgeScroll=0
-synclient AreaLeftEdge=100
+synclient AreaLeftEdge=200
 synclient AreaRightEdge=2800
 synclient AreaTopEdge=250
 synclient VertScrollDelta=30
@@ -41,6 +41,7 @@ synclient CoastingSpeed=0
 synclient PalmDetect=1
 synclient PalmMinWidth=3
 synclient PalmMinZ=100
+synclient MaxTapTime=200
 ```
 Adds three finger tap/click, removes edge scrolling, disables coasting (continued two-finger scrolling even after lifting fingers), makes touchpad less sensitive to unwanted clicks/movement while typing. Since the options are in the `autostart` file, they will automatically be applied at startup.
 
