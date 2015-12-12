@@ -1,7 +1,7 @@
 # Installing Lubuntu on the Asus UX305LA
 My UX305LA model has a Broadwell i5-5200U processor, 256GB SSD, 8GB RAM, and 1920x1080 display.
 
-I wanted to install Lubuntu alongside Windows 10. Since Windows 10 hardware all has UEFI and Secure Boot, it can complicate things for those who want to dual boot Windows and Linux. Luckily the major distributions (including Ubuntu) have adapted their installations to accomodate such hardware. However, for Lubuntu (and presumably Ubuntu), only the 64-bit version works with UEFI and Secure Boot. I tried the 32-bit version, and it would only install if I first enabled CSM (Compatibility Support Module) in the BIOS. However, I have read that installing a Linux distribution alongside Windows 10 in this way (i.e. not in UEFI mode) can cause issues for those who do not have a solid understanding of BIOS and UEFI.
+I wanted to install Lubuntu alongside Windows 10. Since all Windows 10 hardware has UEFI and Secure Boot, it can complicate things for those who want to dual boot Windows and Linux. Luckily the major distributions (including Ubuntu) have adapted their installations to accomodate such hardware. However, for Lubuntu (and presumably Ubuntu), only the 64-bit version works with UEFI and Secure Boot. I tried the 32-bit version, and it would only install if I first enabled CSM (Compatibility Support Module) in the BIOS. However, I have read that installing a Linux distribution alongside Windows 10 in this way (i.e. not in UEFI mode) can cause issues for those who do not have a solid understanding of BIOS and UEFI.
 
 All that said, I settled on Lubuntu 15.04, 64-bit (I tried 15.10 but had issues with suspending the laptop - the laptop would suspend, but then become unresponsive upon waking). For installation, I chose the "install alongside Windows" option, and shrunk the Windows partition. After installation, here are things that work immediately:
 
@@ -11,16 +11,19 @@ All that said, I settled on Lubuntu 15.04, 64-bit (I tried 15.10 but had issues 
 - Suspend
 - Monitor off key (fn-F7)
 - Print screen (saves to ~/ directory)
+- Webcam
 
 Things that require additional configuration or workarounds:
 
 - Suspend shortcut (fn-F1)
+- Suspend after idle period (will unsuccessfully try to hibernate instead; prompt asking for password before hibernation shows)
 - Airplane mode (fn-F2)
 - Brightness adjustment (fn-F5, fn-F6). Though ctrl-F10 and ctrl-F11 will dim and brighten.
 - Trackpad toggle (fn-F8)
 - Sound
 - Sound adjustment and mute (fn-F10, fn-F11, fn-F12)
 - Getting the sound to work
+- Getting the microphone to work
 
 ## Trackpad tweaks
 Add the following lines to `~/.config/lxsession/Lubuntu/autostart` (it as an empty file before editing)
@@ -42,8 +45,10 @@ synclient PalmDetect=1
 synclient PalmMinWidth=3
 synclient PalmMinZ=100
 synclient MaxTapTime=200
+synclient MaxSpeed=2
+synclient AccelFactor=0.1
 ```
-Adds three finger tap/click, removes edge scrolling, disables coasting (continued two-finger scrolling even after lifting fingers), makes touchpad less sensitive to unwanted clicks/movement while typing. Since the options are in the `autostart` file, they will automatically be applied at startup.
+Adjusts speed/sensitivity, adds three finger tap/click, removes edge scrolling, disables coasting (continued two-finger scrolling even after lifting fingers), makes touchpad less sensitive to unwanted clicks/movement while typing. Since the options are in the `autostart` file, they will automatically be applied at startup.
 
 ## Sound tweaks
 To get sound working, install pulseaudio (`sudo apt-get install pulseaudio`), pavucontrol, and pavumeter (`sudo apt-get install pavucontrol pavumeter`) and play with the settings until sound works. Installing pulseaudio should also allow one to add the sound indicator to the taskbar.
@@ -74,3 +79,12 @@ Then make the following changes for each of the three searches:
 - Change `action name` to `"Maximize"` (include the quotes)
 
 For some reason the "snap left" and "snap right" functionality doesn't work perfectly for the terminal programs I've tried so far (XTerm and LXTerminal). The windows snap correctly, and take up 50% of the horizontal space; however, they don't extend all the way down and leave a small gap from the bottom.
+
+## Software to install
+Partial list
+
+- R
+- RStudio
+- Chrome
+- Dropbox
+- texlive-full
