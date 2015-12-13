@@ -51,7 +51,7 @@ synclient AccelFactor=0.1
 Adjusts speed/sensitivity, adds three finger tap/click, removes edge scrolling, disables coasting (continued two-finger scrolling even after lifting fingers), makes touchpad less sensitive to unwanted clicks/movement while typing. Since the options are in the `autostart` file, they will automatically be applied at startup.
 
 ## Sound tweaks
-To get sound working, install pulseaudio (`sudo apt-get install pulseaudio`), pavucontrol, and pavumeter (`sudo apt-get install pavucontrol pavumeter`) and play with the settings until sound works. Installing pulseaudio should also allow one to add the sound indicator to the taskbar.
+To get sound and microphone working, install pulseaudio (`sudo apt-get install pulseaudio`), pavucontrol, and pavumeter (`sudo apt-get install pavucontrol pavumeter`) and play with the settings until sound works. Installing pulseaudio should also allow one to add the sound indicator to the taskbar.
 
 To get the shortcuts working, open up `~/.config/openbox/lubuntu-rc.xml` and search for the following:
 
