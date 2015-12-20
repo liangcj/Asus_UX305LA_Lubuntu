@@ -80,6 +80,9 @@ Then make the following changes for each of the three searches:
 
 For some reason the "snap left" and "snap right" functionality doesn't work perfectly for the terminal programs I've tried so far (XTerm and LXTerminal). The windows snap correctly, and take up 50% of the horizontal space; however, they don't extend all the way down and leave a small gap from the bottom.
 
+## Miscellaneous
+After installing `texlive`, a package called `prerex` becomes the default program for opening `.tex` files. Doing so will force a system logout though. Appears to be an issue with the `prerex` package itself. For workaround just reset default for `.tex` files to something else.
+
 ## Software to install
 Partial list
 
