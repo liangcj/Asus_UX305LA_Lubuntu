@@ -65,7 +65,8 @@ Then edit the text between `<command>` and `</command>` for each of the three re
 - `amixer -D pulse -q sset Master 3%- unmute`
 - `amixer -D pulse -q sset Master toggle`
 
-## Shortcuts for resizing windows
+## Changes to openbox settings
+#### Shortcuts for resizing windows
 For aerosnap-like functionality, open up `~/.config/openbox/lubuntu-rc.xml` and search for the following:
 
 - `"W-Left"`
@@ -79,6 +80,11 @@ Then make the following changes for each of the three searches:
 - Change `action name` to `"Maximize"` (include the quotes)
 
 For some reason the "snap left" and "snap right" functionality doesn't work perfectly for the terminal programs I've tried so far (XTerm and LXTerminal). The windows snap correctly, and take up 50% of the horizontal space; however, they don't extend all the way down and leave a small gap from the bottom.
+
+#### Disable some desktop switching shortcuts
+There are a few desktop switching keyboard shortcuts that I don't use, and which clash with shortcuts I use in other programs
+
+Comment out shortcuts for `C-A-Up`, `C-A-Down`, `S-A-Up`, and `S-A-Down`
 
 ## Miscellaneous
 After installing `texlive`, a package called `prerex` becomes the default program for opening `.tex` files. Doing so will force a system logout though. Appears to be an issue with the `prerex` package itself. For workaround just reset default for `.tex` files to something else.
