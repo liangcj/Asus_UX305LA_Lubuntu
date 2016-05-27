@@ -26,7 +26,7 @@ Things that require additional configuration or workarounds:
 - Getting the microphone to work
 
 ## Trackpad tweaks
-Add the following lines to `~/.config/lxsession/Lubuntu/autostart` (it as an empty file before editing)
+Add the following lines to `~/.config/lxsession/Lubuntu/autostart` (it was an empty file before editing)
 ```
 synclient TapButton3=2
 synclient ClickFinger3=2
