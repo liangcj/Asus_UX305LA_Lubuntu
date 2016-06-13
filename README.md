@@ -3,7 +3,7 @@ My UX305LA model has a Broadwell i5-5200U processor, 256GB SSD, 8GB RAM, and 192
 
 I wanted to install Lubuntu alongside Windows 10. Since all Windows 10 hardware has UEFI and Secure Boot, it can complicate things for those who want to dual boot Windows and Linux. Luckily the major distributions (including Ubuntu) have adapted their installations to accomodate such hardware. However, for Lubuntu (and presumably Ubuntu), only the 64-bit version works with UEFI and Secure Boot. I tried the 32-bit version, and it would only install if I first enabled CSM (Compatibility Support Module) in the BIOS. However, I have read that installing a Linux distribution alongside Windows 10 in this way (i.e. not in UEFI mode) can cause issues for those who do not have a solid understanding of BIOS and UEFI.
 
-All that said, I settled on Lubuntu 15.04, 64-bit (I tried 15.10 but had issues with suspending the laptop - the laptop would suspend, but then become unresponsive upon waking). For installation, I chose the "install alongside Windows" option, and shrunk the Windows partition. After installation, here are things that work immediately:
+~~All that said, I settled on Lubuntu 15.04, 64-bit (I tried 15.10 but had issues with suspending the laptop - the laptop would suspend, but then become unresponsive upon waking).~~ I am using Lubuntu 16.04, 64-bit. For installation, I chose the "install alongside Windows" option, and shrunk the Windows partition. After installation, here are things that work immediately:
 
 - Wi-Fi
 - Touchpad (though required further tweaking according to personal preferences)
@@ -34,7 +34,7 @@ synclient FingerHigh=17
 synclient FingerLow=10
 synclient MaxTapMove=20
 synclient HorizHysteresis=10
-synclient VertHysteresis=10
+synclient VertHysteresis=5
 synclient VertEdgeScroll=0
 synclient AreaLeftEdge=200
 synclient AreaRightEdge=2800
