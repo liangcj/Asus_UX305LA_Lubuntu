@@ -50,6 +50,12 @@ synclient AccelFactor=0.1
 ```
 Adjusts speed/sensitivity, adds three finger tap/click, removes edge scrolling, disables coasting (continued two-finger scrolling even after lifting fingers), makes touchpad less sensitive to unwanted clicks/movement while typing. Since the options are in the `autostart` file, they will automatically be applied at startup.
 
+Also add the following line to disable tapping and scrolling (mouse movement and clicks still register) for 0.5 seconds after any keyboard press. Modifier keys such as alt, shift, and ctrl will not count as keyboard presses.
+
+```
+syndaemon -i 0.5 -d -t -K
+```
+
 ## Sound tweaks
 To get sound and microphone working, install pulseaudio (`sudo apt-get install pulseaudio`), pavucontrol, and pavumeter (`sudo apt-get install pavucontrol pavumeter`) and play with the settings until sound works. Installing pulseaudio should also allow one to add the sound indicator to the taskbar.
 
