@@ -103,3 +103,4 @@ Partial list
 - Chrome
 - Dropbox
 - texlive-full
+- pandoc
